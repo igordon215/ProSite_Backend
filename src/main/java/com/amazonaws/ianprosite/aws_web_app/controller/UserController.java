@@ -30,14 +30,14 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable String id) {
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
         return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         Optional<User> existingUser = userRepository.findById(id);
         if (existingUser.isPresent()) {
             user.setId(id);
@@ -49,7 +49,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable String id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
             userRepository.deleteById(id);
