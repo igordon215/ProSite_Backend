@@ -33,14 +33,14 @@ public class ProjectController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Project> getProjectById(@PathVariable String id) {
+    public ResponseEntity<Project> getProjectById(@PathVariable Long id) {
         Optional<Project> project = projectRepository.findById(id);
         return project.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Project> updateProject(@PathVariable String id, @RequestBody Project project) {
+    public ResponseEntity<Project> updateProject(@PathVariable Long id, @RequestBody Project project) {
         Optional<Project> existingProject = projectRepository.findById(id);
         if (existingProject.isPresent()) {
             project.setId(id);
@@ -54,7 +54,7 @@ public class ProjectController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProject(@PathVariable String id) {
+    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
         Optional<Project> project = projectRepository.findById(id);
         if (project.isPresent()) {
             projectRepository.deleteById(id);

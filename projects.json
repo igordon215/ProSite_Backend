@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Project A",
+    "description": "This is a description of Project A.",
+    "technologies": ["Java", "Spring Boot", "MongoDB"],
+    "startDate": "2023-01-01T00:00:00Z",
+    "endDate": "2023-03-31T23:59:59Z"
+  },
+  {
+    "name": "Project B",
+    "description": "This is a description of Project B.",
+    "technologies": ["Python", "Django", "PostgreSQL"],
+    "startDate": "2023-04-01T00:00:00Z",
+    "endDate": null
+  }
+]

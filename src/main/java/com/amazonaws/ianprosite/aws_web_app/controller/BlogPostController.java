@@ -33,14 +33,14 @@ public class BlogPostController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BlogPost> getBlogPostById(@PathVariable String id) {
+    public ResponseEntity<BlogPost> getBlogPostById(@PathVariable Long id) {
         Optional<BlogPost> blogPost = blogPostRepository.findById(id);
         return blogPost.map(post -> new ResponseEntity<>(post, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BlogPost> updateBlogPost(@PathVariable String id, @RequestBody BlogPost blogPost) {
+    public ResponseEntity<BlogPost> updateBlogPost(@PathVariable Long id, @RequestBody BlogPost blogPost) {
         Optional<BlogPost> existingBlogPost = blogPostRepository.findById(id);
         if (existingBlogPost.isPresent()) {
             blogPost.setId(id);
@@ -54,7 +54,7 @@ public class BlogPostController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBlogPost(@PathVariable String id) {
+    public ResponseEntity<Void> deleteBlogPost(@PathVariable Long id) {
         Optional<BlogPost> blogPost = blogPostRepository.findById(id);
         if (blogPost.isPresent()) {
             blogPostRepository.deleteById(id);
