@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/blog-posts")
+@CrossOrigin(origins = "*") // Added CORS configuration
 public class BlogPostController {
 
     @Autowired
