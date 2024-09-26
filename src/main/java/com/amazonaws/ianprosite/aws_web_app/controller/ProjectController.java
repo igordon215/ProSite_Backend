@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/projects")
+@CrossOrigin(origins = "*") // Added CORS configuration
 public class ProjectController {
 
     @Autowired

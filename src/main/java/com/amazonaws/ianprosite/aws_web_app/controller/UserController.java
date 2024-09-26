@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "*") // Allow requests from any origin
 public class UserController {
 
     @Autowired
