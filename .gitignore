@@ -39,3 +39,99 @@ src/main/resources/application-prod.properties
 *.log
 *.env
 credentials.json
+
+### Additional Security Measures ###
+# Ignore all .properties files in case they contain sensitive data
+*.properties
+
+# Ignore potential key files
+*.pem
+*.key
+*.keystore
+*.jks
+
+# Ignore potential configuration files with sensitive data
+config.json
+secrets.yaml
+application-secrets.yml
+
+# Ignore database files
+*.db
+*.sqlite
+
+# Ignore potential user data files
+users.json
+blog_posts.json
+projects.json
+
+# Ignore AWS configuration files
+.aws/
+aws-config.json
+
+# Ignore any file with 'secret' in its name
+*secret*
+
+# Ignore potential Docker environment files
+docker-compose.override.yml
+
+# Ignore Maven wrapper jar file
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignore potential Node.js dependencies
+node_modules/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore editor backup files
+*~
+*.swp
+*.swo
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore packaged files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore temporary files
+*.tmp
+*.bak
+
+### Token and Cloudflare Related ###
+# Ignore token files
+*token*
+*.token
+token.txt
+
+# Ignore Cloudflare configuration files
+cloudflare.config
+cloudflare.json
+.cloudflare/
+
+# Ignore any file containing 'api_key'
+*api_key*
+
+# Ignore potential Cloudflare Workers scripts
+workers-site/
+
+# Ignore Cloudflare access tokens
+.cloudflare_access_token
+
+# Ignore Cloudflare API tokens
+.cloudflare_api_token
+
+# Ignore any file that might contain Cloudflare credentials
+cloudflare_credentials*
+
+# Ignore Wrangler configuration files (Cloudflare Workers)
+wrangler.toml
+
+# Ignore potential Cloudflare R2 configuration
+r2_config.json
