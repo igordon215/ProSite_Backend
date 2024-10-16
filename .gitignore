@@ -135,3 +135,8 @@ wrangler.toml
 
 # Ignore potential Cloudflare R2 configuration
 r2_config.json
+
+# Additional entries
+sensitive-data.txt
+*password*
+*credential*
