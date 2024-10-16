@@ -2,8 +2,8 @@ spring.application.name=ianprosite
 
 # PostgreSQL Configuration
 spring.datasource.url=jdbc:postgresql://localhost:5432/IanProSite_DB
-spring.datasource.username=postgres
-spring.datasource.password=postgres
+spring.datasource.username=your_database_username
+spring.datasource.password=your_database_password
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 
 # Hibernate ddl auto (create, create-drop, validate, update)
@@ -13,12 +13,12 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
 # JWT Configuration
-jwt.secret=5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437
+jwt.secret=your_jwt_secret_key
 
 # Email Configuration
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
-spring.mail.username=ian.gordon.codes@gmail.com
-spring.mail.password=rian gfah jrcr elez
+spring.mail.username=your_email@gmail.com
+spring.mail.password=your_email_password
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
